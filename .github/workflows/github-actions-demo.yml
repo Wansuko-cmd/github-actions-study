@@ -14,4 +14,10 @@ jobs:
       - name: List files in the repository
         run: |
           ls ${{ github.workspace }}
+      - name: Run Build
+        run: |
+          cd ${{ github.workspace }} && ./gradlew build
+      - name: List files in the repository after
+        run: |
+          ls ${{ github.workspace }}
       - run: echo "🍏 This job's status is ${{ job.status }}."
